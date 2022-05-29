@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound APY Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <h1 id="header">Crypto APY Compound Calculator 7.5%</h1>
+        <!-- Choose Crypto --> <!--Consider adding interest rate as well-->
+        <div id="crypto_choice">
+            <label id="choose">Choose a Crypto</label>
+            <select name="coin" id="coin">
+                <option value="">Bitcoin</option>
+                <option value="">Ethereum</option>
+                <option value="">Cardano</option>
+                <option value="">USDC</option>
+            </select>
+        </div>
+        <!-- Input -->
+        <div class="input_output">
+            <div id="amount_invested">
+                <label for="amount_invested">Amount Invested</label>
+                <input id="amount_invested_box" placeholder="Total Amount Invested">
+            </div>
+            <div id="years">
+                <label for="years">Years</label>
+                <input id="years_box" placeholder="How Many Years">
+            </div>
+        </div>
+        <!-- Calculate Button -->
+        <div id="btn1">
+            <button onclick='totalEarned()'>Calculate</button>
+        </div>
+        <!-- Output -->
+        <div class="input_output">
+            <div id="daily_interest">
+                <label for="daily_interest">Daily Interest</label>
+                <input id="daily_interest_box" placeholder="Interest Earned per Day">
+            </div>
+            <div id="total_interest">
+                <label for="total_interest">Total Interest</label>
+                <input id="total_interest_box" placeholder="Total Interest Earned">
+            </div>
+        </div>
+        <!-- Net -->
+        <div id="net_yield">
+            <label for="net_yield">Net</label>
+            <input type="text" id="net_box" placeholder="Total Yield"/>
+        </div>
+    </div>
+
+    <!-- Script -->
+
+    <script type="text/javascript">
+
+        function totalEarned() {
+
+            var interestRate = .075;
+            var investedAmount = document.getElementById("amount_invested_box").value;
+            var investedAmountForCompound = document.getElementById("amount_invested_box").value;
+            var years = document.getElementById("years_box").value;
+
+        // Compounding
+
+            if (years > 1) {
+                for (var i = 1; i <= years; i++) {
+                    var oneYearInterest = investedAmount * interestRate;
+                    investedAmount = parseInt(investedAmount) + parseInt(oneYearInterest);
+                    var interestDifference = parseInt(investedAmountForCompound) - parseInt(oneYearInterest);
+                    var totalInterest = parseInt(investedAmount) - parseInt(investedAmountForCompound);
+                    var dailyInterest = parseInt(totalInterest) / (365 * years);
+                }
+            document.getElementById('daily_interest_box').value = dailyInterest;
+            document.getElementById('total_interest_box').value = totalInterest; 
+            document.getElementById('net_box').value = investedAmount;
+            }
+            else {
+                var oneYearInterest = investedAmount * interestRate;
+                var dailyInterest = parseInt(oneYearInterest) / 365;
+                document.getElementById('daily_interest_box').value = dailyInterest;
+                document.getElementById('total_interest_box').value = parseInt(oneYearInterest);
+                document.getElementById('net_box').value = parseInt(investedAmount) + parseInt(oneYearInterest);
+            }
+        }
+    </script>
+</body>
+</html>

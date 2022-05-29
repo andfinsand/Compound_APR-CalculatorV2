@@ -1,0 +1,136 @@
+* {
+    margin: 0 auto;
+    font-family: Arial;
+}
+body {
+    background:	linear-gradient(to right, cyan, darkviolet);
+    text-align: center;
+}
+#wrapper {
+    background-color: ghostwhite;
+    border: solid 5px silver;
+    border-style: outset;
+    display: inline-block;
+    text-align: center;
+    border-radius: 15px;
+    width: 350px;
+    margin: 50px;
+    padding: 15px;
+    box-shadow: 6px 6px 20px black;
+}
+#header {
+    color: darkmagenta;
+}
+#crypto_choice {
+    box-shadow: 5px black; /* this isnt working */
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    border: solid turquoise;
+    border-radius: 5px;
+    margin: 20px 12px;
+    padding: 5px 0px;
+    justify-content: space-between;
+}
+#coin {
+    width: 100px;
+}
+
+/* Input */
+
+.input_output {
+    width: 310px;
+    display: inline-block;
+    margin: 0px 20px;
+}
+
+/* Amount Invested */
+
+#amount_invested {
+    align-items: center;
+    display: flex;
+}
+#amount_invested label {
+    margin-left: 0px;
+}
+#amount_invested input {
+    margin-right: 0px;
+}
+
+/* Years */
+
+#years {
+    align-items: center;
+    margin-top: 5px;
+    display: flex; 
+}
+#years label {
+    margin-left: 0px;
+}
+#years input {
+    margin-right: 0px;
+}
+/* Button */
+#btn1 {
+    text-align: right;
+    margin: 15px;
+    padding-right: 50px;
+}
+button {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #7474BF 0%, #348AC7 51%, #7474BF 100%);
+    border-color: silver;
+    border-radius: 7px;
+    height: 40px;
+    width: 80px;
+    box-shadow: 3px 3px 5px black;
+}
+
+/* Output */
+
+/* Daily Interest */
+
+#daily_interest {
+    align-items: center;
+    display: flex; 
+}
+#daily_interest label {
+    margin-left: 0px;
+}
+#daily_interest input {
+    margin-right: 0px;
+}
+
+/* Total Interest */
+
+#total_interest {
+    margin-top: 5px;
+    align-items: center;
+    display: flex; 
+}
+#total_interest label {
+    margin-left: 0px;
+}
+#total_interest input {
+    margin-right: 0px;
+}
+
+/* Net */
+
+#net_yield {
+    
+    margin-top: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+#net_yield label{
+    margin-left: 20px;
+}
+#net_yield input {
+    margin-right: 20px;
+    margin-top: 0px;
+}
